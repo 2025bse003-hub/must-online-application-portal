@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUST Online Application Portal</title>
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+    <div class="page">
+        <!-- UNIVERSITY HEADER -->
+        <div class="header">
+            <div class="university-logo" style = "width: 90px; height: 90px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; margin: 0 auto;">
+                <!-- You can replace this with the actual MUST logo -->
+                <img src="must-logo.jpg" alt = "MUST logo" style = "width: 75%; height: 75%; object-fit: contain;">
+            </div>
+            <h1>MBARARA UNIVERSITY OF<br>SCIENCE AND TECHNOLOGY</h1>
+            <div class="portal-title">Online Application Portal</div>
+        </div>
+        <!-- LOGIN CARD -->
+        <div class="login-card">
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Log in to access your application dashboard</p>
+            <!-- EMAIL -->
+            <label for="email">Email Address</label>
+            <div class="input-container">
+                <div class="icon">
+                    ✉
+                </div>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="name@example.com"
+                >
+            </div>
+            <!-- PASSWORD -->
+            <label for="password">Password</label>
+            <div class="input-container">
+                <div class="icon">
+                    🔒
+                </div>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                >
+                <button
+                    type="button"
+                    class="show-password"
+                    onclick="togglePassword()">
+                    👁
+                </button>
+            </div>
+            <!-- SIGN IN -->
+            <button class="sign-in-button" onclick="signIn()">
+                ➜ Sign In
+            </button>
+            <!-- FORGOT PASSWORD -->
+            <button class="forgot-password" onclick="forgotPassword()">
+                🔑 &nbsp; Forgot your password?
+            </button>
+            <!-- DIVIDER -->
+            <div class="divider">
+                <span>New to the portal?</span>
+            </div>
+            <!-- BOTTOM BUTTONS -->
+            <div class="bottom-buttons">
+                <a href="./create-account.html" class="create-account-button">
+                👤+ &nbsp; Create Account
+            </a>
+                <button
+                    class="how-to-apply"
+                    onclick="howToApply()">
+                    ❔ &nbsp; How to Apply
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function togglePassword() {
+            const password =
+                document.getElementById("password");
+                if (password.type === "password") {
+                    password.type = "text";
+                } else {
+                    password.type = "password";
+                }
+            }
+            function signIn() {
+                const email =
+                document.getElementById("email").value;
+                const password =
+                document.getElementById("password").value;
+                if (email === "" || password === "") {
+                    alert("Please enter your email and password.");
+                    return;
+            }
+            alert(
+                "Login submitted successfully.\n\n" +
+                "Backend authentication can be connected here."
+            );
+        }
+        function forgotPassword() {
+            alert(
+                "Password reset instructions will be sent to your email."
+            );
+        }
+        function howToApply() {
+            alert(
+                "To apply:\n\n" +
+                "1. Create an account.\n" +
+                "2. Sign in to the portal.\n" +
+                "3. Complete your application.\n" +
+                "4. Submit the application."
+            );
+        }
+    </script>
+</body>
+</html>

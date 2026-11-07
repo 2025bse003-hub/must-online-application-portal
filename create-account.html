@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+        <title>Create Account - MUST</title>
+        <link rel="stylesheet" href="create-account-style.css">
+    </head>
+    <body>
+        <div class="page">
+            <!-- UNIVERSITY HEADER -->
+            <div class="header">
+                <div class="university-logo" style = "width: 90px; height: 90px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; margin: 0 auto;">
+                    <img src="must-logo.jpg" alt = "MUST logo" style = "width: 75%; height: 75%; object-fit: contain;">
+            </div>
+            <h1>MBARARA UNIVERSITY OF<br>SCIENCE AND TECHNOLOGY</h1>
+            <div class="portal-title">
+                Online Application Portal
+            </div>
+        </div>
+        <!-- CREATE ACCOUNT CARD -->
+        <div class="account-card">
+            <!-- CLOSE BUTTON -->
+            <button
+            class="close-button"
+            onclick="goBack()">
+            ×
+        </button>
+        <div class="account-header">
+            <h2>Create Account</h2>
+                <p>Provide your details to receive a temporary password.</p>
+            </div>
+            <form id="accountForm">
+                <!-- SURNAME -->
+                <label for="surname">
+                    Surname
+                </label>
+                <div class="input-container">
+                    <div class="icon">👤</div>
+                    <input
+                    type="text"
+                    id="surname"
+                    placeholder="Surname"
+                    required>
+                </div>
+                <!-- OTHER NAMES -->
+                <label for="otherNames">
+                    Other Names
+                </label>
+                <div class="input-container">
+                    <div class="icon">👤</div>
+                    <input
+                    type="text"
+                    id="otherNames"
+                    placeholder="Other names"
+                    required>
+                </div>
+                <!-- PHONE -->
+                <label>
+                    Phone Number
+                </label>
+                <div class="country-select">
+                    <select id="country">
+                        <option>Uganda (+256)</option>
+                        <option>Kenya (+254)</option>
+                        <option>Tanzania (+255)</option>
+                        <option>Rwanda (+250)</option>
+                    </select>
+                </div>
+                <div class="input-container phone-input">
+                    <div class="icon">📞</div>
+                    <input
+                    type="tel"
+                    id="phone"
+                    placeholder="0770000000"
+                    required>
+                </div>
+                <p class="helper-text">Use an active phone number to receive notifications.</p>
+                <!-- EMAIL -->
+                <label for="email">
+                    Email Address
+                </label>
+                <div class="input-container">
+                    <div class="icon">✉</div>
+                    <input
+                    type="email"
+                    id="email"
+                    placeholder="myemail@gmail.com"
+                    required>
+                </div>
+                <!-- CREATE EMAIL -->
+                <button
+                type="button"
+                class="create-email"
+                onclick="createEmail()">
+                Don't have an Email?
+                Click to create ➜
+            </button>
+            <!-- FOOTER BUTTONS -->
+            <div class="footer-buttons">
+                <a
+                    href="login page.html"
+                    class="close-link">
+                    Close
+                </a>
+                <button
+                    type="submit"
+                    class="create-button">
+                    👤+ &nbsp; Create Account
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+/* CLOSE BUTTON */
+    function goBack() {
+        window.location.href = "login page.html";
+    }
+    /* CREATE EMAIL */
+    function createEmail() {
+        alert("You can create an email account with an email provider such as Gmail, then return here and enter your email address."
+    );
+    }
+    /* CREATE ACCOUNT */
+    document
+        .getElementById("accountForm")
+        .addEventListener("submit", function(event) {
+            event.preventDefault();
+            const surname =
+                document.getElementById("surname").value;
+                const otherNames =
+                document.getElementById("otherNames").value;
+                const phone =
+                document.getElementById("phone").value;
+                const email =
+                document.getElementById("email").value;
+                if (
+                surname === "" ||
+                otherNames === "" ||
+                phone === "" ||
+                email === ""
+            ) {
+                    alert(
+                    "Please fill in all the required fields."
+                );
+                    return;
+                }
+                alert(
+                    "Account information submitted successfully.\n\n" +
+                    "A real temporary password can be generated and sent here after connecting this page to a backend/database."
+                );
+            });
+        </script>
+    </body>
+    </html>
